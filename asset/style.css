@@ -1,3 +1,30 @@
+#wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+}
 
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh;
+}
 
+#start-btn {
+    border: 1px solid blue;
+    padding: 5px 10px;
+}
 
+#answer {
+    display:grid;
+    grid-template-columns: repeat(2,auto);
+    gap: 10px;
+    margin:20px 0;
+}
