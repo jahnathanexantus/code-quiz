@@ -1,25 +1,28 @@
 // create question
 var question = document.getElementById('question-prop');
 var startButton = document.getElementById('start-btn');
-var btn1 = document.getElementById('button-1');
-var btn2 = document.getElementById('button-2');
-var btn3 = document.getElementById('button-3');
-var btn4 = document.getElementById('button-4');
+var btnOne = document.getElementById('button-1');
+var btnTwo= document.getElementById('button-2');
+var btnThree = document.getElementById('button-3');
+var btnFour = document.getElementById('button-4');
 var secondLt = 10;
 var  timerEl = document.getElementById('timerId')
-var answers =0;
 var currentQuestionindex = 0;
 
 
 startButton.addEventListener('click', startGame);
-
+btnOne.addEventListener('click', moveQuestion);
+btnTwo.addEventListener('click', moveQuestion);
+btnThree.addEventListener('click', moveQuestion);
+btnFour.addEventListener('click', moveQuestion);
 
 
 function startGame () {
     timer()
     showQuestion ()
     showAnswer ()
-
+    
+    
 }
 
 
@@ -46,11 +49,17 @@ function timer() {
 
     function showAnswer () {
         var currentQuestion = questions[currentQuestionindex];
-        btn1.textContent = currentQuestion.answers[0].a;
-        btn2.textContent = currentQuestion.answers[0].b;
-        btn3.textContent = currentQuestion.answers[0].c;
-        btn4.textContent = currentQuestion.answers[0].d;
-        
+        btnOne.innerHTML = currentQuestion.answers[0].a;
+        btnTwo.innerHTML = currentQuestion.answers[1].b;
+        btnThree.innerHTML = currentQuestion.answers[2].c;
+        btnFour.innerHTML = currentQuestion.answers[3].d;
+        }
+
+    function moveQuestion () {
+        // currentQuestionindex++;
+        showAnswer ()
+        showQuestion ()
+    
     }
 
         
@@ -60,7 +69,7 @@ var questions = [
         answers:[
             {a:'jacks stupid',correct:'false'},
             {b:'javascript',corrct:'true'},
-            {c:'james scoot',correct:false},
+            {c:'james scoot',correct:'false'},
             {d:'black jack',correct:'false'}
         ]
     },

@@ -25,11 +25,12 @@ body {
 #answer {
     display:grid;
     grid-template-columns: repeat(2,auto);
-    gap: 10px;
-    margin:20px 0;
+    gap: 2px;
+    margin:10px 0;
 }
 
 
-#answer {
-    box-sizing: border-box;
+#button-1, #button-2, #button-3, #button-4 {
+    border: 3px solid black;
+    
 }
