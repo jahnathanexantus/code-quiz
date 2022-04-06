@@ -5,30 +5,35 @@ var btn1 = document.getElementById('button-1');
 var btn2 = document.getElementById('button-2');
 var btn3 = document.getElementById('button-3');
 var btn4 = document.getElementById('button-4');
-var secondLt = 0;
-var timerEl = 10;
-var timerId = document.getElementById('timerId')
+var secondLt = 10;
 
+var  timerEl = document.getElementById('timerId')
+var timerInterval;
+
+timerInterval = setInterval(timer, 1000)
 
 
 
 startButton.addEventListener('click',function(event){
     event.preventDefault();
     startGame();
+    timer()
 });
 
 
 
 function startGame () {
 console.log('started');
+startButton.classList.remove('hide')
 }
-
+// create timer
 function timer() {
-    timerEl= setInterval(secondLt--,1000);
-    timerEl.textcontext = secondLt
-    if(secondLt == 0){
-        clearInterval(interval)
+    secondLt--;
+    timerEl.textContent = secondLt;
+    if(secondLt == 0) {
+        clearInterval(timerInterval);
+    }
     }
 
         
-    }
+    
