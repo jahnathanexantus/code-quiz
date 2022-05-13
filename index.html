@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./asset/style.css">
-    <title>Document</title>
-</head>
-<body>
-    <div id="wrapper">
-        <div id="question">
-            <h1 id="question-prop">question</h1>
-            <span id="timerId">10:00</span>
-            <div id="answer">
-                <button id="button-1" class="btn">answer 1</button>
-                <button id="button-2" class="btn">answer 2</button>
-                <button id="button-3" class="btn">answer 3</button>
-                <button id="button-4" class="btn">answer 4</button>
-                <div id="control">
-                    <button id="start-btn" class="btns">click</button>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./asset/style.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="question">
+				<h1 value="" id="question-prop">question</h1>
+				<span id="timerId">10:00</span>
+				<div id="answer">
+					<button onclick="correctAnswer(this)" id="button-1" class="btn">answer 1</button>
+					<button onclick="correctAnswer(this)" id="button-2" class="btn">answer 2</button>
+					<button onclick="correctAnswer(this)" id="button-3" class="btn">answer 3</button>
+					<button onclick="correctAnswer(this)" id="button-4" class="btn">answer 4</button>
+					<div id="control">
+						<button id="start-btn" class="btns">click</button>
+					</div>
+				</div>
+			</div>
+			<div class="correctcolor" id="correctAnswer"></div>
+		</div>
 
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
- <script src="./asset/script.js"></script>   
-</body>
+		<script src="./asset/script.js"></script>
+	</body>
 </html>
