@@ -85,7 +85,7 @@ function timer() {
 	if (currentQues == questions.length){
 		endQuiz()
 	}else {
-		showQuestion(currentQues)
+		// showQuestion(currentQues)
 	}
 	// console.log(questions[currentQues]);
 	// showQuestion(currentQues)
