@@ -8,10 +8,9 @@ const startBtn = document.getElementById("start-btn");
 let currentQues = 0;
 let score = 0;
 let answerEl = document.getElementById("answer");
-let displayQues = document.getElementById('question-prop')
-let timerEl = document.getElementById('timerId')
-let secondLt = 10;
-
+let displayQues = document.getElementById("question-prop");
+let timerEl = document.getElementById("timerId");
+let secondLt = 15;
 
 // create question
 var questions = [
@@ -23,7 +22,14 @@ var questions = [
 		d: "black jack",
 		answer: "javascript",
 	},
-
+	{
+		question: "what is the language of the internet",
+		a: "spanish",
+		b: "creol",
+		c: "HTML",
+		d: "english",
+		answer: "HTML",
+	},
 	{
 		question: "What does css stand for?",
 		a: "cool,sexy, and slick",
@@ -33,9 +39,7 @@ var questions = [
 		answer: "cascading style sheet",
 	},
 ];
-var  currentAns = questions[currentQues];
-
-
+var currentAns = questions[currentQues];
 
 // / create timer
 function timer() {
@@ -44,14 +48,15 @@ function timer() {
 		if (secondLt >= 0) {
 			timerEl.textContent = secondLt;
 		}
+		if (secondLt === 0) endQuiz();
 	}, 1000);
 }
 
 // create functionality for the question to show
 
- function showQuestion  (currentQues) {
-	 console.log(questions[currentQues]);
-	
+function showQuestion(currentQues) {
+	console.log(questions[currentQues]);
+
 	displayQues.innerHTML = questions[currentQues].question;
 	displayQues.value = questions[currentQues].answer;
 	btn_1.innerText = questions[currentQues].a;
@@ -64,46 +69,40 @@ function timer() {
 	btn_4.value = questions[currentQues].d;
 }
 
+const chooseAns = () => {
+	btn_1.onclick = (e) => correctAnswer(e);
+	btn_2.onclick = (e) => correctAnswer(e);
+	btn_3.onclick = (e) => correctAnswer(e);
+	btn_4.onclick = (e) => correctAnswer(e);
+};
 
-
-
- const chooseAns = () =>{
-	btn_1.onclick = (e)=> correctAnswer(e)
-	btn_2.onclick = (e)=> correctAnswer(e)
-	btn_3.onclick = (e)=> correctAnswer(e)
-	btn_4.onclick = (e)=> correctAnswer(e)
-}
-
- const correctAnswer = (e) =>{
+const correctAnswer = (e) => {
 	console.log(e.target.value);
-	if (e.target.value === questions[currentQues].answer){
-		displayQues.textContent = "you've chosen correctly"
+	if (e.target.value === questions[currentQues].answer) {
+		displayQues.textContent = "you've chosen correctly";
 	} else {
-		displayQues.innerHTML = "wrong answer"
+		displayQues.innerHTML = "wrong answer";
 	}
 	currentQues++;
-	if (currentQues == questions.length){
-		endQuiz()
-	}else {
+	if (currentQues == questions.length) {
+		endQuiz();
+	} else {
 		// showQuestion(currentQues)
 	}
 	// console.log(questions[currentQues]);
 	// showQuestion(currentQues)
-}
+};
 
-const endQuiz = () =>{
-	displayQues.innerHTML = 'Game over \nFinal Score: ' + secondLt *6;
+const endQuiz = () => {
+	displayQues.innerHTML = "Game over \nFinal Score: " + secondLt * 6;
 	timerEl.style.display = "none";
-	answerEl.style.display ="none"
-}
+	answerEl.style.display = "none";
+};
 
- const startGmn = () =>{
-	timer()
-	showQuestion(currentQues)
+const startGmn = () => {
+	timer();
+	showQuestion(currentQues);
 	chooseAns();
-	
-	
-}
-
+};
 
 startBtn.onclick = startGmn;
