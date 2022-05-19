@@ -5,20 +5,29 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./asset/style.css" />
-		<title>Document</title>
+		<title>Code quiz</title>
 	</head>
 	<body>
 		<div id="wrapper">
 			<div id="question">
-				<h1 value="" id="question-prop">question</h1>
+				<h1 id="wrong-right"></h1>
+				<h1 id="question-prop">question</h1>
 				<span id="timerId">15</span>
 				<div id="answer">
-					<button onclick="correctAnswer(this)" id="button-1" class="btn">answer 1</button>
-					<button onclick="correctAnswer(this)" id="button-2" class="btn">answer 2</button>
-					<button onclick="correctAnswer(this)" id="button-3" class="btn">answer 3</button>
-					<button onclick="correctAnswer(this)" id="button-4" class="btn">answer 4</button>
+					<button onclick="correctAnswer(this)" id="button-1" class="btn">
+						answer 1
+					</button>
+					<button onclick="correctAnswer(this)" id="button-2" class="btn">
+						answer 2
+					</button>
+					<button onclick="correctAnswer(this)" id="button-3" class="btn">
+						answer 3
+					</button>
+					<button onclick="correctAnswer(this)" id="button-4" class="btn">
+						answer 4
+					</button>
 					<div id="control">
-						<button id="start-btn" class="btns">click</button>
+						<button id="start-btn" class="btns">Start Game</button>
 					</div>
 				</div>
 			</div>

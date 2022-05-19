@@ -10,8 +10,8 @@ let score = 0;
 let answerEl = document.getElementById("answer");
 let displayQues = document.getElementById("question-prop");
 let timerEl = document.getElementById("timerId");
-let secondLt = 15;
-
+let secondLt = 20;
+let wrongRight = document.getElementById("wrong-right");
 // create question
 var questions = [
 	{
@@ -79,15 +79,19 @@ const chooseAns = () => {
 const correctAnswer = (e) => {
 	console.log(e.target.value);
 	if (e.target.value === questions[currentQues].answer) {
-		displayQues.textContent = "you've chosen correctly";
+		wrongRight.textContent = "you've chosen correctly";
 	} else {
-		displayQues.innerHTML = "wrong answer";
+		wrongRight.innerHTML = "wrong answer";
 	}
-	currentQues++;
-	if (currentQues == questions.length) {
+	setTimeout(() => {
+		wrongRight.textContent = " ";
+	}, 1000);
+
+	if (currentQues == questions.length - 1) {
 		endQuiz();
 	} else {
-		// showQuestion(currentQues)
+		currentQues++;
+		showQuestion(currentQues);
 	}
 	// console.log(questions[currentQues]);
 	// showQuestion(currentQues)
