@@ -54,7 +54,7 @@ function timer() {
 
 // create functionality for the question to show
 
-function showQuestion(currentQues) {
+function showQuestion() {
 	console.log(questions[currentQues]);
 
 	displayQues.innerHTML = questions[currentQues].question;
@@ -105,8 +105,13 @@ const endQuiz = () => {
 
 const startGmn = () => {
 	timer();
-	showQuestion(currentQues);
+	showQuestion();
 	chooseAns();
 };
 
 startBtn.onclick = startGmn;
+
+
+
+const practice = "the world and everything in it will be mine"
+console.log(practice.split('').slice(0,6))

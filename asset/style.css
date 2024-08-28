@@ -1,39 +1,100 @@
-#wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    background-color: white;
-    width: 500px;
-    max-width: 80%;
+/* Reset some default styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Body and wrapper styling */
 body {
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    min-height: 100vh;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
 }
 
-#start-btn {
-    border: 1px solid blue;
-    padding: 5px 10px;
+#wrapper {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
 }
 
-#answer {
-    display:grid;
-    grid-template-columns: repeat(2,auto);
-    gap: 2px;
-    margin:10px 0;
+h1 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-
-#button-1, #button-2, #button-3, #button-4 {
-    border: 3px solid black;
-    
+/* Timer styling */
+#timerId {
+  display: block;
+  font-size: 3em;
+  margin: 20px 0;
+  animation: pulse 1s infinite;
 }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Button styling */
+.btn,
+.btns {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px 0;
+  font-size: 1.2em;
+  width: 100%;
+  cursor: pointer;
+  color: #fff;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover,
+.btns:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-5px);
+}
+
+.btns {
+  background-color: #ff6f61;
+}
+
+.btns:hover {
+  background-color: #ff8a73;
+}
+
+/* Correct Answer Highlight */
 .correctcolor {
-    color: aliceblue;
+  display: none;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #28a745;
+  color: #fff;
+}
+
+/* Control button container */
+#control {
+  margin-top: 20px;
 }
